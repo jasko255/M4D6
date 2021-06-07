@@ -1,5 +1,5 @@
 import {Component} from 'react'
-// import CommentList from './CommentList'
+import CommentList from './CommentList'
 
 
 class CommentArea extends Component {
@@ -17,7 +17,7 @@ class CommentArea extends Component {
                 })
                 console.log(response);
                 let comments = await response.json()
-                console.log(comments);
+                console.log('comments',comments);
                 this.setState({comments: comments})
             } catch (error) {
                 console.log(error);
@@ -28,8 +28,8 @@ class CommentArea extends Component {
     render() {
         return (
             <div>
-                {/* <CommentList commentsToShow={this.state.comments} /> */}
                 COMMENTAERA
+                <CommentList commentsToShow={this.state.comments} />
             </div>
         );
     }
